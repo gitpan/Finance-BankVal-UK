@@ -1,0 +1,5 @@
+Revision history for Perl extension Finance::BankVal::UK.
+
+0.01  Thu Jul  8 14:28:02 2010
+	- original version; created by h2xs 1.23 with options
+		-AX -b 5.8.0 Finance::BankVal::UK
