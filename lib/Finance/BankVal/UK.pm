@@ -11,7 +11,7 @@ use JSON;
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw(bankValUK new);
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 my $account;			#account number to be validated
 my $uid;                        #userID
@@ -199,6 +199,7 @@ sub formatErrorMsg{
                 . "<sortcode></sortcode><bicbank></bicbank><bicbranch></bicbranch><subbranchsuffix></subbranchsuffix><bankname></bankname>"
                 . "<owningbank></owningbank><longbank1></longbank1><longbank2></longbank2><ownbc></ownbc><ccode></ccode>"
                 . "<supervisorybody></supervisorybody><deletedate></deletedate><changedate></changedate><printindicator></printindicator>"
+
                 . "<bacsstatus></bacsstatus><bacschangedate></bacschangedate><bacsclosedate></bacsclosedate><bacsredirectfrom></bacsredirectfrom>"
                 . "<bacsredtoscode></bacsredtoscode><bacssettbank></bacssettbank><bacssettsec></bacssettsec><bacssettsubsec>"
                 . "</bacssettsubsec><bacshandbank></bacshandbank><bacshandst></bacshandst><bacsaccnumflg></bacsaccnumflg>"
@@ -376,6 +377,22 @@ in the I<LoginConfig.txt> file bundled with this module.
 
 None by default.
 &bankValUK is exported on request i.e. "use Finance::BankVal::UK qw(&bankValUK);"
+
+=head1 DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+use LWP::UserAgent;
+use XML::Simple;
+use JSON;
+
+Crypt::SSLeay is also required as it is a dependency of LWP::UserAgent.
+
+Crypt::SSLeay is typically bundled with windows Perl ports, however on *nix you may need to install it by:
+
+sudo aptitude install libssl-dev (might not be neccessary and can be removed after install)
+sudo cpan -i Crypt::SSLeay
+
 
 =head1 SEE ALSO
 

@@ -1,4 +1,4 @@
-Finance-BankVal-UK version 0.01
+Finance-BankVal-UK version 0.02
 ===============================
 
 BankValUK - Perl extension for accessing Unified Software's bankValUK web
@@ -98,14 +98,14 @@ A. Evans - Unified Software, support@unifiedsoftware.co.uk
 
 INSTALLATION
 
-To install this module type the following:
+To install this module type the following: (on Windows use dmake or nmake instead of make)
 
    perl Makefile.PL
    make
    make test
    make install
 
-   or just copy the .pm file to a folder in your PERL @INC
+   or just copy the .pm file to a folder in your PERL @INC and ensure you have all the dependencies listed below installed.
 
 DEPENDENCIES
 
@@ -114,6 +114,15 @@ This module requires these other modules and libraries:
 LWP::UserAgent;
 XML::Simple;
 JSON;
+
+Crypt::SSLeay is also required as it is a dependency of LWP::UserAgent.
+
+Crypt::SSLeay is typically bundled with windows Perl ports, however on *nix you may need to install it by:
+
+sudo aptitude install libssl-dev (might not be neccessary and can be removed after install)
+sudo cpan -i Crypt::SSLeay
+
+
 
 COPYRIGHT AND LICENSE
 

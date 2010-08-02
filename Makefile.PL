@@ -5,7 +5,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'Finance::BankVal::UK',
     VERSION_FROM      => 'lib/Finance/BankVal/UK.pm', # finds $VERSION
-    PREREQ_PM         => {LWP::UserAgent, XML::Simple, JSON}, # e.g., Module::Name => 1.1
+    PREREQ_PM         => {LWP::UserAgent => 5.835, XML::Simple => 2.18, JSON => 2.21, Crypt::SSLeay => 0.57}, 
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT       => 'A module for controlling REST web service calls to Unified Software\'s UK bank validation services', # retrieve abstract from module
        AUTHOR         => 'A. Evans <support@unifiedsoftware.co.uk>') : ()),
