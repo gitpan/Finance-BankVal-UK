@@ -11,7 +11,7 @@ use JSON;
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw(bankValUK new);
-our $VERSION = '0.04';
+our $VERSION = '0.02';
 
 my $account;			#account number to be validated
 my $uid;                        #userID
